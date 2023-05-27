@@ -18,24 +18,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Current Rappers</h1>
+    <h1>Reservas</h1>
     <ul class="rappers">
     <% for(let i=0; i < info.length; i++) {%>
         <li class="rapper">
-            <span><%= info[i].stageName %></span>
-            <span><%= info[i].birthName %></span>
-            <span><%= info[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
+            <span class='fa fa-calendar'></span>
+            <span><%= info[i].nombre %></span>
+            <span><%= info[i].email %></span>
+            <span><%= info[i].fecha %></span>
+            <span><%= info[i].status %></span>
             <span class='fa fa-trash'></span>
         </li>
     <% } %>
     </ul>
 
-    <h2>Add A Rapper:</h2>
+    <h2>Agregar una reserva</h2>
 
-    <form action="/addRapper" method="POST">
-        <input type="text" placeholder="Stage Name" name="stageName">
-        <input type="text" placeholder="Birth Name" name="birthName">
+    <form action="/addReservation" method="POST">
+        <input type="text" placeholder="Nombre" name="nombre">
+        <input type="email" placeholder="E-mail" name="email">
+        <input type="date" placeholder="Fecha" name="fecha" required>
         <input type="submit">
     </form>
     
